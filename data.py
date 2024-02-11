@@ -10,8 +10,8 @@ def get_df(excel_name, sheet_name, unwanted_cols):
     df = df.drop(columns=unwanted_cols)
     return df
 
-df_main = get_df('Datenanalyse.xlsx', 'SPD', C.unwanted_cols_SPD)
-df_wahlbet = get_df('Datenanalyse.xlsx', 'BTW 2021', C.unwanted_cols_wahlbet)
+df_main = get_df('data/Datenanalyse.xlsx', 'SPD', C.unwanted_cols_SPD)
+df_wahlbet = get_df('data/Datenanalyse.xlsx', 'BTW 2021', C.unwanted_cols_wahlbet)
 df_main = df_main.join(df_wahlbet, how='inner')
 df_main.rename(columns=C.newname_cols_SPD, inplace=True)
 
@@ -36,7 +36,7 @@ for col in C.cols_to_scale:
     df_quote[col] = df_quote[col] / df_quote['Einwohner']
 
 # skaliere 'Arbeitslose Frauen' separat: Anteil AF an Erwerbsfähigen, nicht Einwohnern
-df_new = pd.read_csv('Arbeitslose.csv', index_col="Gebiet")
+df_new = pd.read_csv('data/Arbeitslose.csv', index_col="Gebiet")
 filt = (df_new['Sachmerkmal'] == 'Arbeitslose insgesamt')
 df_new = df_new[filt]
 df_new['2022'] = df_new['2022'].astype(float)

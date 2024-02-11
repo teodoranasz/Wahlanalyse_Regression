@@ -5,8 +5,8 @@ import statsmodels.api as sm
 from statsmodels.stats.outliers_influence import variance_inflation_factor as VIF
 import pandas as pd
 
-
-### finde für merkmal 'col' die stadtteile, die um >2sigma vom durchschnitt abweichen
+### simple functions
+# ausreißer für merkmal 'col'
 def find_significants(col, df = D.df_quote):
     dfcap = df.copy()
     if "Stadt Leipzig" in df.index:
@@ -16,7 +16,7 @@ def find_significants(col, df = D.df_quote):
     filt = ( abs(dfcap[col] - mn) > deviation )
     print(f'__Mittelwert__: \n{mn:.2f} \n\n__2*sigma__:\n{deviation:.2f} \n\n__Abweichler__: \n{dfcap[filt][col]}')
 
-### korrelationskoeffizient der merkmale col1, col2
+# korrelationskoeffizient der merkmale col1, col2
 def correlation(col1, col2, df = D.df_quote):
     dfcap = df.copy()
     if "Stadt Leipzig" in df.index:
@@ -26,7 +26,7 @@ def correlation(col1, col2, df = D.df_quote):
     cor = first.corr(second)
     print(f"__Korrelationskoeffizient für {col1} und {col2}__: \n{cor:.2f}")
 
-### alle signifikanten korrelationskoeffizienten (ab +/-.3) der wahlergebnisse mit allen merkmalen
+# alle signifikanten korrelationskoeffizienten (ab +/-.3) der wahlergebnisse mit allen merkmalen
 def significant_correlations(df = D.df_quote):
     # only interested in numerical variables
     dfcap = df.select_dtypes(include=['int', 'float'])
@@ -42,7 +42,7 @@ def significant_correlations(df = D.df_quote):
             if abs(corr) > threshold:
                 print(f"__Korrelationskoeffizient für {column1} und {column2}__: \n{corr:.2f}")
 
-### simple plot
+# simple plot
 def plot_ergebnis_feature(y, x='', frame = D.df_quote, bezirk=''):
     df = frame
     if bezirk:
@@ -95,7 +95,7 @@ def filter_params_by_VIF(frame = D.df_quote):
     print('\n')
     return params
 
-### linear regression multivariate
+### OLS regression
 def regression(wahl = 'BTW', frame = D.df_quote, drop=[]):
     params = filter_params_by_VIF(frame)
     params = [x for x in params if x not in drop]

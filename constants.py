@@ -11,24 +11,24 @@ cols_to_scale = ['Ausländer', 'Privat-PKW', 'Nutzfahrzeuge', 'Langzeitarbeitslo
                  'Straftaten', 'Kinder insgesamt']
 cols_to_hundred = cols_to_scale + ['BTW', 'LTW', 'KMW', 'Wahlbeteiligung']
 
-features_needed = [ ('Einwohner.csv', ['2022','Einwohner insgesamt','Einwohner'] ),
-                    ('Einwohner.csv', ['2022','   Ausländer','Ausländer'] ),
-                    ('Zufriedenheitsfaktoren.csv', ['2021','Lebenszufriedenheit'] ),
-                    ('Kraftfahrzeuge.csv', ['2022','Privat-PKW'] ),
-                    ('Kraftfahrzeuge.csv', ['2022','Nutzfahrzeuge'] ),
-                    ('Wohnsituation.csv', ['2021','Wohneigentum', 'Wohneigentum Quote'] ),
-                    ('Arbeitslose.csv', ['2022','Anteil an den Erwerbsfähigen','Arbeitslosenquote'] ),
-                    ('Arbeitslose.csv', ['2015','Langzeitarbeitslose'] ),
-                    ('Arbeitslose.csv', ['2022', 'Frauen', 'Arbeitslose Frauen']),
-                    ('Mieten.csv', ['2021','Mietbelastung'] ),
-                    ('Einkommen.csv', ['2021','Haushaltseinkommen'] ),
-                    ('Abschlüsse.csv', ['2021','Realschulabschluss','Realschulabschlussquote'] ),
-                    ('Abschlüsse.csv', ['2021','Hochschulabschluss','Hochschulabschlussquote'] ),
-                    ('Straftaten.csv', ['2022','Straftaten insgesamt','Straftaten'] ),
-                    ('Alter.csv', ['2023','Durchschnittsalter'] ),
-                    ('Alter.csv', ['2023','Altenquote'] ),
-                    ('Alter.csv', ['2023','Jugendquote'] ),
-                    ('Kinder_in_Kitas.csv', ['2022','Kinder insgesamt'] )
+features_needed = [ ('data/Einwohner.csv', ['2022','Einwohner insgesamt','Einwohner'] ),
+                    ('data/Einwohner.csv', ['2022','   Ausländer','Ausländer'] ),
+                    ('data/Zufriedenheitsfaktoren.csv', ['2021','Lebenszufriedenheit'] ),
+                    ('data/Kraftfahrzeuge.csv', ['2022','Privat-PKW'] ),
+                    ('data/Kraftfahrzeuge.csv', ['2022','Nutzfahrzeuge'] ),
+                    ('data/Wohnsituation.csv', ['2021','Wohneigentum', 'Wohneigentum Quote'] ),
+                    ('data/Arbeitslose.csv', ['2022','Anteil an den Erwerbsfähigen','Arbeitslosenquote'] ),
+                    ('data/Arbeitslose.csv', ['2015','Langzeitarbeitslose'] ),
+                    ('data/Arbeitslose.csv', ['2022', 'Frauen', 'Arbeitslose Frauen']),
+                    ('data/Mieten.csv', ['2021','Mietbelastung'] ),
+                    ('data/Einkommen.csv', ['2021','Haushaltseinkommen'] ),
+                    ('data/Abschlüsse.csv', ['2021','Realschulabschluss','Realschulabschlussquote'] ),
+                    ('data/Abschlüsse.csv', ['2021','Hochschulabschluss','Hochschulabschlussquote'] ),
+                    ('data/Straftaten.csv', ['2022','Straftaten insgesamt','Straftaten'] ),
+                    ('data/Alter.csv', ['2023','Durchschnittsalter'] ),
+                    ('data/Alter.csv', ['2023','Altenquote'] ),
+                    ('data/Alter.csv', ['2023','Jugendquote'] ),
+                    ('data/Kinder_in_Kitas.csv', ['2022','Kinder insgesamt'] )
                    ]
 
 cols_dependent = ['BTW','LTW','KMW','Wahlbeteiligung']
