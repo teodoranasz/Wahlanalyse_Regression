@@ -1,6 +1,6 @@
 # Wahlanalyse mithilfe multivariater Regression
 
-Statistische Analyse der vergangenen Wahlergebnisse (_"KMW", "LTW", "BTW"_) nach Stadtbezirk
+Statistische Analyse der vergangenen Wahlergebnisse nach Stadtbezirk
 
 __Datensätze:__ [Open Data Leipzig] https://opendata.leipzig.de
 ___
